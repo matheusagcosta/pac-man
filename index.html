@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pac Man CSS Only!</title>
+
+<style>
+
+.right { float:right; }
+.left { float:left; }
+
+	
+	.field
+	{ background: #000; height:600px; margin:25px auto; padding: 20px; width:800px; } 
+
+		.pacman 
+		{ height:200px; margin:25px; position: relative; width: 200px;
+		-moz-animation: route 10.0s infinite;
+        -webkit-animation: route 10.0s infinite; }
+
+			.pacman .top 
+			{ background-color: yellow; height:75px;
+			  width:150px;
+	          border-radius: 150px 150px 0 0;
+	 	      -moz-border-radius: 150px 150px 0 0;
+		      -webkit-border-radius: 150px 150px 0 0;
+		      -moz-animation: mouth 0.7s linear 0s infinite alternate;
+			  -webkit-animation: mouth 0.7s linear 0s infinite alternate; }
+
+			.pacman .bottom 
+			{ background-color: yellow; height:75px;
+	          width:150px;
+	 	      border-radius: 0 0 150px 150px;
+		      -moz-border-radius: 0 0 150px 150px;
+		      -webkit-border-radius: 0 0 150px 150px; 
+	     	  -moz-animation: mouthR 0.7s linear 0s infinite alternate;
+	          -webkit-animation: mouthR 0.7s linear 0s infinite alternate; }
+		
+		.ghost
+		{ height:200px; margin:25px; position: relative; width: 200px;
+		-moz-animation: routeGhost 10.0s infinite;
+        -webkit-animation: routeGhost 10.0s infinite; }
+			
+			.ghost .head
+			{ background:#ef0707; height:100px; position: relative; width: 152px;
+			  border-radius: 100px 100px 0 0;
+	 	      -moz-border-radius: 100px 100px 0 0;
+		      -webkit-border-radius: 100px 100px 0 0; }
+			
+				.ghost .head .eye,
+				.ghost .head .eyeBack
+				{ position: relative; }
+
+				.ghost .head .eyeBack
+				{ background: #FFF; height: 50px; width: 50px;
+				border-radius: 100%;
+		        -moz-border-radius: 100%; 
+		        -webkit-border-radius: 100%; }
+
+		        	.ghost .head .eyeBack.left
+		        	{ margin: 50px 0 0 25px; }
+
+		        	.ghost .head .eyeBack.right
+		        	{ margin: 50px 25px 0 0 ; }
+
+		        		.ghost .head .eye
+		        		{ background: #0d2bd7; height: 25px; margin:10%; width: 25px;
+						  border-radius: 100%;
+					      -moz-border-radius: 100%; 
+					      -webkit-border-radius: 100%; 
+					      -moz-animation: looking 10.0s infinite;
+  					      -webkit-animation: looking 10.0s infinite; }
+
+			.ghost .legs
+			{ width:0;
+		      height:40px;
+		      border-right:38px solid #ef0707;;
+		      border-left:38px solid #ef0707;;
+		      border-bottom:40px solid transparent; display: block;
+		      border-radius: 0 0 10px 10px;
+		      -moz-border-radius: 0 0 10px 10px; 
+		      -webkit-border-radius: 0 0 10px 10px; }
+
+@-moz-keyframes mouth {
+0% {-moz-transform: rotate(-45deg);}
+100% {-moz-transform: rotate(0deg);}
+}
+@-webkit-keyframes mouth {
+0% {-webkit-transform: rotate(-45deg);}
+100% {-webkit-transform: rotate(0deg);}
+}
+
+@-moz-keyframes mouthR {
+0% {-moz-transform: rotate(45deg);}
+100% {-moz-transform: rotate(0deg);}
+}
+@-webkit-keyframes mouthR{
+0% {-webkit-transform: rotate(45deg);}
+100% {-webkit-transform: rotate(0deg);}
+}
+
+@-moz-keyframes route
+{
+0%   {left:0px; top:0px; }
+25%  {left:560px; top:0px; -moz-transform: rotate(90deg); }
+50%  {left:560px; top:360px; -moz-transform: rotate(180deg); }
+75%  {left:0px; top:360px; -moz-transform: rotate(270deg);}
+100% {left:0px; top:0px; -moz-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes route
+{
+0%   {left:0px; top:0px; }
+25%  {left:560px; top:0px; -webkit-transform: rotate(90deg);}
+50%  {left:560px; top:360px; -webkit-transform: rotate(180deg);}
+75%  {left:0px; top:360px; -webkit-transform: rotate(270deg);}
+100% {left:0px; top:0px; -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes routeGhost
+{
+0%   {left:600px; top:-220px; }
+25%  {left:600px; top:160px; }
+50%  {left:0px; top:160px; }
+75%  {left:0px; top:-220px; }
+100% {left:600px; top:-220px; }
+}
+
+@-webkit-keyframes routeGhost
+{
+0%   {left:600px; top:-220px; }
+25%  {left:600px; top:160px; }
+50%  {left:0px; top:160px; }
+75%  {left:0px; top:-220px; }
+100% {left:600px; top:-220px; }
+}
+
+@-moz-keyframes looking
+{
+0%   {left:0px; top:15px; }
+25%  {left:5px; top:0px; }
+50%  {left:15px; top:0px; }
+75%  {left:15px; top:15px; }
+100% {left:0px; top:15px; }
+}
+
+@-webkit-keyframes looking
+{
+0%   {left:0px; top:15px; }
+25%  {left:5px; top:0px; }
+50%  {left:15px; top:0px; }
+75%  {left:15px; top:15px; }
+100% {left:0px; top:15px; }
+}
+
+</style>
+</head>
+<body>
+	<div class="field">
+		<div class="pacman">
+			<div class="top"></div>
+			<div class="bottom"></div>
+		</div>
+		<div class="ghost">
+			<div class="head">
+				<div class="eyeBack left">
+					<div class="eye"></div>
+				</div>
+				<div class="eyeBack right">
+					<div class="eye"></div>
+				</div>
+			</div>
+			<div class="legs left"></div>	
+			<div class="legs left"></div>	
+		</div>
+	</div>
+</body>
+</html>
