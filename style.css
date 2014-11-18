@@ -6,29 +6,37 @@ body { background: #000000; }
 	.field
 	{ background: #000; height:600px; margin:25px auto; padding: 20px; width:800px; } 
 
-		.pacman 
-		{ height:200px; margin:25px; position: relative; width: 200px;
-		-moz-animation: route 10.0s infinite;
-        -webkit-animation: route 10.0s infinite; }
+		.pacman { 
+		  height:200px; 
+		  margin:25px; 
+		  position: relative; 
+		  width: 200px;
+	  	-moz-animation: route 10.0s infinite;
+      -webkit-animation: route 10.0s infinite; 
+		}
 
-			.pacman .top 
-			{ background-color: yellow; height:75px;
-			  width:150px;
-	          border-radius: 150px 150px 0 0;
-	 	      -moz-border-radius: 150px 150px 0 0;
-		      -webkit-border-radius: 150px 150px 0 0;
-		      -moz-animation: mouth 0.7s linear 0s infinite alternate;
-			  -webkit-animation: mouth 0.7s linear 0s infinite alternate; }
+		.pacman .top,
+		.pacman .bottom { 
+		  background-color: yellow; 
+		  height:75px;
+  	  width:150px;
+		}
 
-			.pacman .bottom 
-			{ background-color: yellow; height:75px;
-	          width:150px;
-	 	      border-radius: 0 0 150px 150px;
-		      -moz-border-radius: 0 0 150px 150px;
-		      -webkit-border-radius: 0 0 150px 150px; 
-	     	  -moz-animation: mouthR 0.7s linear 0s infinite alternate;
-	          -webkit-animation: mouthR 0.7s linear 0s infinite alternate; }
-		
+    .pacman .top {
+      border-radius: 150px 150px 0 0;
+      -moz-border-radius: 150px 150px 0 0;
+      -webkit-border-radius: 150px 150px 0 0;
+      -moz-animation: mouth 0.7s linear 0s infinite alternate;
+		  -webkit-animation: mouth 0.7s linear 0s infinite alternate;
+    }
+		.pacman .bottom {   
+		  border-radius: 0 0 150px 150px;
+      -moz-border-radius: 0 0 150px 150px;
+      -webkit-border-radius: 0 0 150px 150px; 
+      -moz-animation: mouthR 0.7s linear 0s infinite alternate;
+		  -webkit-animation: mouthR 0.7s linear 0s infinite alternate;      
+    }
+    
 		.ghost
 		{ height:200px; margin:25px; position: relative; width: 200px;
 		-moz-animation: routeGhost 10.0s infinite;
